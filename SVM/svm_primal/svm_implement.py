@@ -8,12 +8,12 @@ import matplotlib.pyplot as plot
 from numpy.linalg import inv
 #========================= train data process =================================
 with open('train.csv',mode='r') as f:
-    myList_train=[];
+    myList_train=[]
     for line in f:
         terms=line.strip().split(',') # 7*N matrix
         myList_train.append(terms)
 with open('test.csv',mode='r') as f:
-    myList_test = [];
+    myList_test = []
     for line in f:
         terms=line.strip().split(',') # 7*N matrix
         myList_test.append(terms)
@@ -26,7 +26,7 @@ def str_2_flo(data):
 
 def add_cons_feature(data):   # add constant feature 1 to as the last feature before label
     label = [row[-1] for row in data]
-    temp = data;
+    temp = data
     for i in range(len(data)):
         temp[i][-1] = 1.0
     for i in range(len(data)):
@@ -36,7 +36,7 @@ def add_cons_feature(data):   # add constant feature 1 to as the last feature be
 # convert label {0,1} to {-1,1}
 # data -- float
 def polar_label(data):
-    temp = data;
+    temp = data
     for i in range(len(data)):
         temp[i][-1] = 2*data[i][-1]-1;
     return temp
