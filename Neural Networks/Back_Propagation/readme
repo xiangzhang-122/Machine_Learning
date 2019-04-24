@@ -1,0 +1,2 @@
+This file includes the implementation of BP algorithm to train a four-layer neural network (NN).
+Initialization significantly affects the performance of NN and usually random initialization of weights are preferrred.
